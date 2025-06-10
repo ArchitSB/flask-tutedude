@@ -46,6 +46,10 @@
         <h1>Create New To-Do Item</h1>
         <form id="todoForm">
             <div>
+                <label for="itemId">Item ID:</label>
+                <input type="text" id="itemId" name="itemId" required>
+            </div>
+            <div>
                 <label for="itemName">Item Name:</label>
                 <input type="text" id="itemName" name="itemName" required>
             </div>
@@ -72,8 +76,9 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    itemName: itemName,
-                    itemDescription: itemDescription
+                itemId: document.getElementById('itemId').value, // Add this line
+                itemName: itemName,
+                itemDescription: itemDescription
                 })
             })
             .then(response => response.json())
