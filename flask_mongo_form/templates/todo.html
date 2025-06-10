@@ -50,6 +50,14 @@
                 <input type="text" id="itemId" name="itemId" required>
             </div>
             <div>
+                <label for="itemUuid">Item UUID:</label>
+                <input type="text" id="itemUuid" name="itemUuid" required>
+            </div>
+            <div>
+                <label for="itemHash">Item Hash:</label>
+                <input type="text" id="itemHash" name="itemHash" required>
+            </div>
+            <div>
                 <label for="itemName">Item Name:</label>
                 <input type="text" id="itemName" name="itemName" required>
             </div>
@@ -76,7 +84,9 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                itemId: document.getElementById('itemId').value, // Add this line
+                itemId: document.getElementById('itemId').value,
+                itemUuid: document.getElementById('itemUuid').value,
+                itemHash: document.getElementById('itemHash').value,
                 itemName: itemName,
                 itemDescription: itemDescription
                 })
