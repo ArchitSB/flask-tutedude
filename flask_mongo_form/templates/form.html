@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Form</title></head>
+<body>
+    <h1>Submit your details</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
